@@ -8,7 +8,7 @@ LICENSE file in the root directory of this source tree.
 from typing import List, Dict
 
 
-class Position:
+class Position(object):
     """ A position in a multilogue discussion. """
     thesis: str                 = ""
     antithesis: str             = ""
@@ -17,6 +17,7 @@ class Position:
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
             setattr(self, key, value)
+            super(Position, self).__init__()
 
     def __call__(self, *args, **kwargs):
         for key, value in kwargs.items():
