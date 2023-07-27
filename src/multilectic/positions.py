@@ -10,8 +10,12 @@ from typing import List, Dict
 
 class Position(object):
     """ A position in a multilogue discussion. """
+
     thesis: str                 = ""
     antithesis: str             = ""
+    facts: List[str]            = []
+    presuppositions: List[str]  = []
+
     conversation: List[Dict]    = []  # The course of conversation, sequence of statements.
 
     def __init__(self, **kwargs):
