@@ -9,14 +9,13 @@ from typing import List, Dict
 
 
 class Position(object):
-    """ A position in a multilogue discussion. """
+    """ A current position in a multilogue discussion. """
 
     thesis: str                 = ""
     antithesis: str             = ""
     facts: List[str]            = []
     presuppositions: List[str]  = []
-
-    conversation: List[Dict]    = []  # The course of conversation, sequence of statements.
+    assumptions: List[str]      = []
 
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
@@ -33,5 +32,6 @@ class Position(object):
             Thesis:  {self.thesis}, 
             Antithesis: {self.thesis},
             Facts: {self.facts},
-            Presuppositions: {self.presuppositions}
+            Presuppositions: {self.presuppositions},
+            Assumptions: {self.assumptions}
             """
