@@ -31,5 +31,7 @@ class Position(object):
     def __repr__(self):
         return f"""Position   
             Thesis:  {self.thesis}, 
-            Antithesis: {self.thesis}
+            Antithesis: {self.thesis},
+            Facts: {self.facts},
+            Presuppositions: {self.presuppositions}
             """
