@@ -5,8 +5,9 @@
 This source code is licensed under the license found in the
 LICENSE file in the root directory of this source tree.
 """
-from .positions import Position
+from .positions import Position, Opinion
 
 __all__ = [
     "Position",
+    "Opinion",
 ]
