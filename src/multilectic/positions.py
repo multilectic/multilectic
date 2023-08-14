@@ -38,8 +38,9 @@ class Position(object):
 
 
 class Opinion(object):
-    """ A point of view in a multilogue conversation. """
+    """ Opinion in a multilogue conversation. """
 
+    opinion: str                = ""
     facts: List[str]            = []
     presuppositions: List[str]  = []
     assumptions: List[str]      = []
@@ -52,7 +53,8 @@ class Opinion(object):
     def __call__(self, *args, **kwargs):
         for key, value in kwargs.items():
             setattr(self, key, value)
-        return self
+        self.opinion = 'I have no opinion.'
+        return self.opinion
 
     def __repr__(self):
         return f"""Opinion
@@ -60,3 +62,31 @@ class Opinion(object):
             Presuppositions: {self.presuppositions},
             Assumptions: {self.assumptions}
             """
+
+
+class PointOfView(object):
+    """ A point of view in a multilogue conversation. """
+
+    point_of_view: str                = ""
+    facts: List[str]            = []
+    presuppositions: List[str]  = []
+    assumptions: List[str]      = []
+
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+            super(Opinion, self).__init__()
+
+    def __call__(self, *args, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+        self.point_of_view = 'I have no point of view.'
+        return self.point_of_view
+
+    def __repr__(self):
+        return f"""Opinion
+            Facts: {self.facts},
+            Presuppositions: {self.presuppositions},
+            Assumptions: {self.assumptions}
+            """
+
